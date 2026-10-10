@@ -14,6 +14,9 @@ In a Security Operations Center (SOC), identifying suspicious traffic requires v
 ---
 
 ## Architecture & Network Topology
+
+![Network Topology](docs/network_topology.png)
+
 ```text
 [ Attacker (h9) / Malicious Server (h10) ]
 │ Subnets: 198.51.100.0/24 & 209.165.202.128/27
@@ -52,6 +55,8 @@ When DMZ host `h5` (`209.165.200.235`) retrieved the simulated payload `W32.Nimd
 
 09/14-01:52:13.241351 [**] [1:1000003:0] Malicious Server Hit! [**] [Priority: 0]
 {TCP} 209.165.200.235:47282 -> 209.165.202.133:6666
+
+![Snort Alert Evidence](docs/snort_alert_evidence.png)
 
 ### 2. Forensic PCAP Preservation
 To capture the full transport exchange for malware analysis and protocol validation, ran `tcpdump` in the background on interface `h5-eth0`:
